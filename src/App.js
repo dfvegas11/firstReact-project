@@ -28,13 +28,31 @@ const App = () => {
     setHeroes(data);
   };
 
+  const sendHeroe = async (heroe) => {
+    await fetch(
+      "https://peticiones-giweb-4b594-default-rtdb.firebaseio.com/heroes.json",
+      {
+        method: "POST",
+        body: JSON.stringify(heroe),
+      }
+    );
+  };
+
+  const handleSubmit = (heroe) => {
+    sendHeroe(heroe);
+    fetchHeroes();
+  };
+
   return (
     <div>
       <BrowserRouter>
         <NavBar />
         <Routes>
           <Route path="/home" element={<Home heroes={heroes} />}></Route>
-          <Route path="/new" element={<NewHero />}></Route>
+          <Route
+            path="/new"
+            element={<NewHero onSubmit={handleSubmit} />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </div>
