@@ -8,8 +8,7 @@ const Cards = (props) => {
       <Card style={{ width: "30rem" }}>
         <Card.Img variant="top" src={props.heroe.imagen} />
         <Card.Body>
-          <Card.Title>Nombre: {props.heroe.nombre}</Card.Title>
-          <Card.Text>Edad: {props.heroe.edad}</Card.Text>
+          <Card.Title>{props.heroe.nombre}</Card.Title>
           <VModal heroe={props.heroe}></VModal>
         </Card.Body>
       </Card>

@@ -10,12 +10,12 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link>
-              <Link to="/home">Home</Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="/new">New Hero</Link>
-            </Nav.Link>
+            <Link to="/home" style={{ paddingRight: "15px" }}>
+              Home
+            </Link>
+            <Link to="/new" style={{ paddingRight: "15px" }}>
+              New Hero
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
